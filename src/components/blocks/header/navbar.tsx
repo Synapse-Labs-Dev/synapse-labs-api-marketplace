@@ -87,7 +87,7 @@ export function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <div className="flex items-end justify-end ">
+        <div className="flex md:items-center justify-end ">
           <div>
             {!session ? (
               <Link href="/auth/login" legacyBehavior passHref>

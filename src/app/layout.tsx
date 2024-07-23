@@ -14,8 +14,8 @@ const dmMono = DM_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'OTF PaaS Template',
-  description: 'Created by Opentensor Foundation',
+  title: 'Synapse Labs',
+  description: 'Marketplace',
   icons: '/favicon.ico'
 }
 

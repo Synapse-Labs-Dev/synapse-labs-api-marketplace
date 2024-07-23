@@ -132,11 +132,11 @@ const Navigation = () => {
         className="flex flex-col justify-between gap-20 h-full overflow-hidden"
       >
         <div className="flex flex-row max-h-[40px]  justify-between place-items-center ">
-          <div className="dark:invert">
+          <div>
             {/* <Link href={'/'}>
               <Image src="/logo.svg" alt="brand-logo" width={50} height={40} />
             </Link> */}
-            <Logo width={50} height={50} />
+            <Logo width={28} height={28} />
           </div>
           <button className="p-1 rounded-full hidden md:flex dark:text-neutral-400" onClick={handleOpenClose}>
             <svg
