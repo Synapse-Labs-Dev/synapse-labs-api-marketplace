@@ -6,10 +6,10 @@ export default async function DashboardLayout({ children }: { children: React.Re
   const session = await getSignedInUser()
 
   return (
-    <div className="flex h-screen p-8">
+    <div className="flex md:h-screen  md:p-8 p-3">
       <Sidebar />
       <Separator orientation="vertical" className="h-[current]" />
-      <div className="px-24 py-12 w-full flex justify-center">{children}</div>
+      <div className="md:px-24 md:py-12  w-full flex justify-center">{children}</div>
     </div>
   )
 }
