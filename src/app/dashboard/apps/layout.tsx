@@ -34,7 +34,7 @@ function AppsLayout({ children }: { children: React.ReactNode }) {
       <div className="flex flex-col md:flex-row gap-2 md:items-center justify-between">
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-3">
-            <RiApps2Fill className="w-6 h-6" />
+            <RiApps2Fill className="md:w-6 md:h-6" />
             <h1 className="md:text-4xl text-2xl font-[Haffer]">App Center</h1>
           </div>
           <div className="text-xs  font-light tracking-widest">Discover latest apps</div>

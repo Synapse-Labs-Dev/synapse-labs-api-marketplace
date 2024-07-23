@@ -37,20 +37,20 @@ function Page() {
       <div className="flex flex-col justify-between">
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-3">
-            <BsBarChartFill className="w-6 h-6" />
-            <h1 className="text-4xl  font-[Haffer]">API Logs</h1>
+            <BsBarChartFill className="md:w-6 md:h-6" />
+            <h1 className="md:text-4xl text-2xl  font-[Haffer]">API Logs</h1>
           </div>
           <div className="text-xs  font-light tracking-widest">Most recent calls made using your API keys.</div>
         </div>
       </div>
-      <div className="flex w-full border border-slate-500 rounded-md">
+      <div className="flex w-full border border-slate-500 rounded-md overflow-auto">
         <table className="table-fixed w-full">
           <thead className="">
-            <tr className=" tracking-wider">
-              <th className="py-2 px-8 text-left font-normal">Key</th>
-              <th className="py-2 px-8 text-left font-normal w-[45%]">Endpoint</th>
-              <th className="py-2 px-8 text-left font-normal w-[15%]">Status</th>
-              <th className="py-2 px-8 text-left font-normal w-[20%]">Created</th>
+            <tr className="tracking-wider">
+              <th className="py-2 md:px-8 px-2 text-left font-normal">Key</th>
+              <th className="py-2 md:px-8 px-2 text-left font-normal md:w-[45%]">Endpoint</th>
+              <th className="py-2 md:px-8 px-2 text-left font-normal md:w-[15%]">Status</th>
+              <th className="py-2 md:px-8 px-2 text-left font-normal md:w-[20%]">Created</th>
             </tr>
           </thead>
           {status === 'IDLE' || status === 'PENDING' ? (
@@ -62,7 +62,7 @@ function Page() {
               </tr>
             </tbody>
           ) : (
-            <tbody className=" tracking-wider">
+            <tbody className="overflow-x-scroll tracking-wider">
               {apiLogs.length === 0 && (
                 <tr className="border-t border-slate-500">
                   <td colSpan={4} className="py-6 px-8 text-center">
@@ -72,10 +72,10 @@ function Page() {
               )}
               {apiLogs.map((log, idx) => (
                 <tr key={idx + 1} className="border-t border-slate-500">
-                  <td className="py-2 px-8">{log.key_name}</td>
-                  <td className="py-2 px-8">{log.endpoint}</td>
-                  <td className="py-2 px-8">{log.status}</td>
-                  <td className="py-2 px-8">{created(log.created_at)}</td>
+                  <td className="py-2 md:px-8 px-2">{log.key_name}</td>
+                  <td className="py-2 md:px-8 px-2">{log.endpoint}</td>
+                  <td className="py-2 md:px-8 px-2">{log.status}</td>
+                  <td className="py-2 md:px-8 px-2">{created(log.created_at)}</td>
                 </tr>
               ))}
             </tbody>

@@ -18,7 +18,7 @@ const Page: React.FC = async () => {
       <div className="flex flex-col justify-between">
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-3">
-            <BsFillCreditCard2FrontFill className="w-6 h-6" />
+            <BsFillCreditCard2FrontFill className="md:w-6 md:h-6" />
             <h1 className="text-4xl font-[Haffer]">Billing</h1>
           </div>
           <div className="text-xs  font-light tracking-widest">

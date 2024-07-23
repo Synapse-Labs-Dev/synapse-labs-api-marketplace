@@ -49,8 +49,8 @@ export function Modal() {
             <Input value={name} onChange={(evt) => setName(evt.target.value)} id="name" className="col-span-3" />
           </div>
         </div>
-        <AlertDialogFooter>
-          <AlertDialogAction className="font-light w-[94px]" disabled={status === 'PENDING'} onClick={submitHandler}>
+        <AlertDialogFooter className="items-center justify-between">
+          <AlertDialogAction className="font-light md:w-[94px]" disabled={status === 'PENDING'} onClick={submitHandler}>
             {status === 'PENDING' ? (
               <>
                 <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
