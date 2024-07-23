@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+import { prisma } from '@/lib/database'
+
 import { hashApiKey } from '../../../_utils/apiKey'
 import { postAvatar, Prompt } from './handlers'
-import { prisma } from '@/lib/database'
 
 export const maxDuration = 30
 
@@ -56,7 +57,7 @@ export async function POST(request: NextRequest) {
       }
     })
 
-    return NextResponse.json(result, { status: 200 })
+    return NextResponse.json({ success: true, result }, { status: 200 })
   } catch (error: any) {
     await prisma.apiLog.create({
       data: {

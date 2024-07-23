@@ -18,14 +18,17 @@ We use vercel for deployment: https://opentensor-paas-template.vercel.app/
 
 https://opentensor-paas-template.apidog.io/
 
-
 ## Setup
 
 ## 1. Clone the repository
 
-Clone the opentensor-api repository to your local machine:
+i. Clone the opentensor-api repository to your local machine using git:
 
 `git clone https://github.com/opentensor/opentensor-api.git`
+
+ii. use to following command to pull docker image
+
+`docker pull...`
 
 ## 2. Setup environment
 
@@ -47,36 +50,46 @@ Get your stripe keys: https://stripe.com/docs/keys
 
 ### Email
 
+1. Using Gmail SMPT and nodemailer:
+   Signing in to Google > App passwords
+   https://myaccount.google.com › apppasswords
+
+`EMAIL_USER: your_gmail_email@gmail.com`
+
+`EMAIL_APP_PASSWORD: your_app_password_here`
+
+1. Using Resend: Create a free Resend account and paste in your API key: https://resend.com
+
+Connect your domain, and replace the email in `src/lib/email/resend-mailer.ts` file.
+
 `RESEND_SECRET:`
 
 `RESEND_DOMAIN: your custom domain or 'resend.dev' `
-
-Create a free Resend account and paste in your API key: https://resend.com
-
-Connect your domain, and replace the email in `src/lib/email/mailer.ts` file.
 
 ### Auth
 
 1. Create your Google Auth Credentials here:
    https://console.cloud.google.com/apis/
 
-   `GOOGLE_CLIENT_ID:`
+`GOOGLE_CLIENT_ID:`
 
-   `GOOGLE_CLIENT_SECRET:`
+`GOOGLE_CLIENT_SECRET:`
 
 2. Create your Github Auth Credentials here:
    https://github.com/settings/developers
 
-   `GITHUB_CLIENT_ID:`
+`GITHUB_CLIENT_ID:`
 
-   `GITHUB_CLIENT_SECRET:`
+`GITHUB_CLIENT_SECRET:`
 
-3. `NEXTAUTH_URL='http://localhost:3000'` for development
-   for production, replace this with your website url
+3. NEXT Auth
 
-   `NEXTAUTH_SECRET:` A random string is used to hash tokens, sign/encrypt cookies and generate cryptographic keys.
+`NEXTAUTH_URL='http://localhost:3000'` for development
+for production, replace this with your website url
 
-   `APIKEY_ENCRYPT_KEY:`
+`NEXTAUTH_SECRET:` A random string is used to hash tokens, sign/encrypt cookies and generate cryptographic keys.
+
+`APIKEY_ENCRYPT_KEY:`
 
 ### Vision(SN19)
 
@@ -122,6 +135,33 @@ Run the local development server:
 
 When deploying to Vercel, make sure you update your environment variables.
 
+## 7. Release
+
+To initaie a release, after commiting the changes to github run the following commands:
+
+1. `npx changeset add`
+
+the above command lets you add a custom Release note
+
+2. `pnpm run release` choose: patch | minor | major
+
+See here for information on [semver](https://semver.org/) versioning
+
+3. Your final prompt will be to provide a message to go alongside the changeset. This will be written into the changelog when the next release occurs.
+4. After this, a new changeset will be added which is a markdown file with YAML front matter.
+
+```
+-| .changeset/
+-|-| UNIQUE_ID.md
+
+```
+
+The message you typed can be found in the markdown file. If you want to expand on it, you can write as much markdown as you want, which will all be added to the changelog on publish. If you want to change the bump type for the changeset, that's also fine.
+
+4. Once you are happy with the changeset, commit the file to your branch.
+
 # Resources
 
-Links
+1. https://nodemailer.com/smtp
+2. https://next-auth.js.org/getting-started
+3. https://github.com/changesets/changesets

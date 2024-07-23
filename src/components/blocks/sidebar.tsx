@@ -11,10 +11,11 @@ import { FaKey } from 'react-icons/fa'
 import { FiLogOut } from 'react-icons/fi'
 import { IoDocumentTextSharp } from 'react-icons/io5'
 import { MdOutlineDashboard } from 'react-icons/md'
-import { RiFeedbackLine } from 'react-icons/ri'
+import { RiApps2Fill, RiFeedbackLine } from 'react-icons/ri'
 
 import SidebarNavigation from '../ui/sidebar-navgation'
 import { ThemeToggle } from '../ui/theme-toggle'
+import { Logo } from './logo'
 
 const containerVariants = {
   close: {
@@ -52,6 +53,8 @@ const Navigation = () => {
 
   const pathname = usePathname()
   const router = useRouter()
+
+  const hasPathname = pathname.includes('/dashboard/apps')
 
   useEffect(() => {
     if (isOpen) {
@@ -93,6 +96,12 @@ const Navigation = () => {
         active: pathname === '/dashboard/logs'
       },
       {
+        name: 'App Center',
+        href: '/dashboard/apps',
+        icon: RiApps2Fill,
+        active: hasPathname
+      },
+      {
         name: 'Docs',
         href: process.env.NEXT_PUBLIC_DOCS_LINK,
         icon: IoDocumentTextSharp,
@@ -122,13 +131,14 @@ const Navigation = () => {
         initial="close"
         className="flex flex-col justify-between gap-20 h-full overflow-hidden"
       >
-        <div className="flex flex-row max-h-[40px] justify-between place-items-center ">
-          <div className="dark:invert">
-            <Link href={'/'}>
+        <div className="flex flex-row max-h-[40px]  justify-between place-items-center ">
+          <div>
+            {/* <Link href={'/'}>
               <Image src="/logo.svg" alt="brand-logo" width={50} height={40} />
-            </Link>
+            </Link> */}
+            <Logo width={28} height={28} />
           </div>
-          <button className="p-1 rounded-full flex dark:text-neutral-400" onClick={handleOpenClose}>
+          <button className="p-1 rounded-full hidden md:flex dark:text-neutral-400" onClick={handleOpenClose}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

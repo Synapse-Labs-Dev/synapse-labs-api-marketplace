@@ -101,12 +101,12 @@ function Login() {
       </div>
       <div className="flex flex-col gap-4 items-center ">
         <div className="flex flex-col gap-3 items-center">
-          <p className="font-normal text-sm">
+          {/* <p className="font-normal text-sm">
             Not a member?{' '}
             <Link href="#" className="hover:underline">
               Signup
             </Link>
-          </p>
+          </p> */}
           <p className="font-normal text-sm">Or</p>
         </div>
       </div>

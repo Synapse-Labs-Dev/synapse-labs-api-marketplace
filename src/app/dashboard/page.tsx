@@ -4,10 +4,10 @@ import React from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 
 import { useGlobalStore } from '@/_store/globalStore'
+import { countRequestsToday, getTodayDate, totalRequests } from '@/_utils/helpers'
 import { StatusOverview } from '@/components/blocks/dashboard/status'
 import { UsageOverview } from '@/components/blocks/dashboard/usage'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { countRequestsToday, getTodayDate, totalRequests } from '@/_utils/helpers'
 
 function Page() {
   const [apiLogs, fetchAndSetApiLogsToState] = useGlobalStore((state) => [
@@ -36,7 +36,7 @@ function Page() {
   return (
     <section className="flex flex-col gap-12 px-4 h-full w-full">
       <Toaster />
-      <h1 className="text-4xl">{`Welcome back, ${session?.user?.name || session?.user?.email || ''}`}</h1>
+      <h1 className="md:text-4xl text-2xl">{`Welcome back, ${session?.user?.name || session?.user?.email || ''}`}</h1>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

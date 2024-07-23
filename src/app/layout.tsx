@@ -14,8 +14,8 @@ const dmMono = DM_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Api platform',
-  description: 'Created by Opentensor',
+  title: 'Synapse Labs',
+  description: 'Marketplace',
   icons: '/favicon.ico'
 }
 
