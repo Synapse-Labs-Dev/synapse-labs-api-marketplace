@@ -31,11 +31,11 @@ function AppsLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <section className="flex flex-col gap-4 px-4 lg:w-[85%] md:w-[90%]">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col md:flex-row gap-2 md:items-center justify-between">
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-3">
             <RiApps2Fill className="w-6 h-6" />
-            <h1 className="text-4xl  font-[Haffer]">App Center</h1>
+            <h1 className="md:text-4xl text-2xl font-[Haffer]">App Center</h1>
           </div>
           <div className="text-xs  font-light tracking-widest">Discover latest apps</div>
         </div>
@@ -43,7 +43,7 @@ function AppsLayout({ children }: { children: React.ReactNode }) {
         <div className="flex items-center gap-6">
           <div>
             <Select onValueChange={(value: string) => setSelectedKey(value)}>
-              <SelectTrigger className="w-56">
+              <SelectTrigger className="md:w-56">
                 <SelectValue placeholder="Select an API key" />
               </SelectTrigger>
               <SelectContent>
@@ -64,10 +64,10 @@ function AppsLayout({ children }: { children: React.ReactNode }) {
 
           <div className="flex items-center gap-3">
             <button onClick={handleBack} className="text-xl rounded-full bg-neutral-50 ">
-              <RiArrowLeftSLine className="w-8 h-8 dark:invert" />
+              <RiArrowLeftSLine className="md:w-8 md:h-8 dark:invert" />
             </button>
             <button onClick={handleForward} className="text-xl bg-neutral-50 rounded-full">
-              <RiArrowRightSLine className="w-8 h-8 dark:invert" />
+              <RiArrowRightSLine className="md:w-8 md:h-8 dark:invert" />
             </button>
           </div>
         </div>

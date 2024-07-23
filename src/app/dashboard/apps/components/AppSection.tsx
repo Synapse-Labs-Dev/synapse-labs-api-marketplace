@@ -21,7 +21,7 @@ const AppSection: React.FC<AppSectionProps> = ({ items, title }) => {
     <div className="py-4">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-light">{title}</h2>
-        <button onClick={() => setShowAll(!showAll)} className="hover:underline text-xs font-light">
+        <button onClick={() => setShowAll(!showAll)} className="hover:underline text-xs text-blue-500 font-light">
           {showAll ? 'Show Less' : 'Show All'}
         </button>
       </div>
