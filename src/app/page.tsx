@@ -4,14 +4,14 @@ import { useAnimate } from 'framer-motion'
 import Link from 'next/link'
 import { TypeAnimation } from 'react-type-animation'
 
+import { Navbar } from '@/components/blocks/header/navbar'
 import { Canvas } from '@/components/blocks/metagraph/Canvas'
-import { Navbar } from '@/components/blocks/navbar'
 
 export default function Home() {
   const [scope, animate] = useAnimate()
   return (
     <main>
-      <div className="flex flex-col p-8">
+      <div className="flex flex-col md:p-8 p-3">
         <Navbar />
 
         <div className="flex flex-col items-center h-[89vh]">
