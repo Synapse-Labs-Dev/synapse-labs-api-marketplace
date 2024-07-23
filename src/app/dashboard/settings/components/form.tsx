@@ -84,7 +84,7 @@ export function AccountForm() {
   return (
     <Form {...form}>
       <Toaster position="top-right" />
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-1/2">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 md:w-1/2">
         <FormField
           control={form.control}
           name="name"
