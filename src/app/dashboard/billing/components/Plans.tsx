@@ -60,13 +60,13 @@ function Plans({ planType = '' }) {
   }
 
   return (
-    <div className="py-6 space-y-8 w-2/3">
+    <div className="py-6 md:space-y-8 md:w-2/3">
       {plans.map((plan) => (
         <div key={plan.name}>
           <Card
-            className={`overflow-hidden relative mb-8 pt-4 items-center justify-between gap-3 flex ${selectedPlan?.name === plan.name ? 'border-slate-500' : ''}`}
+            className={`overflow-hidden relative mb-8 pt-4 items-center justify-between gap-3 flex ${planType === plan.interval ? 'border-black' : ''}`}
           >
-            <CardContent className="flex justify-between w-full gap-3">
+            <CardContent className={`flex flex-col justify-between w-full gap-3`}>
               <RadioGroup
                 value={selectedPlan?.name}
                 onValueChange={() => setSelectedPlan(plan)}
@@ -75,7 +75,7 @@ function Plans({ planType = '' }) {
               >
                 <RadioGroupItem value={plan.name} />
                 <div className="ml-4">
-                  <h3 className="text-lg">{plan.name}</h3>
+                  <h3 className="md:text-lg">{plan.name}</h3>
                   <p>{`$${plan.price}`}</p>
                   <p className="text-sm text-gray-500">{plan.description}</p>
                 </div>

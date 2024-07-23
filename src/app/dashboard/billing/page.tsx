@@ -14,7 +14,7 @@ const Page: React.FC = async () => {
   const highestActivePlan = findActivePlan(activePlans.results)
 
   return (
-    <div className="flex flex-col gap-4  px-4 lg:w-[85%] md:w-[90%]">
+    <div className="flex flex-col gap-4  ml-2 md:px-4 lg:w-[85%] md:w-[90%]">
       <div className="flex flex-col justify-between">
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-3">
