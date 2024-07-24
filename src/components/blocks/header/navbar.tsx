@@ -90,8 +90,8 @@ export function Navbar() {
         <div className="flex md:items-center justify-end ">
           <div>
             {!session ? (
-              <Link href="/auth/login" legacyBehavior passHref>
-                <div className={navigationMenuTriggerStyle()}>Login</div>
+              <Link href="/auth/login" className={navigationMenuTriggerStyle()}>
+                <div className={'hover:cursor-pointer'}>Login</div>
               </Link>
             ) : (
               <div onClick={() => signOut()} className="hover:cursor-pointer hover:underline">
